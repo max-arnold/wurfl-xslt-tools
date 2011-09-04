@@ -2,13 +2,11 @@ WURFL XSLT Tools
 ================
 by Roland Guelle <roldriguez@users.sourceforge.net>, http://guelle.de
 
-
 The WURFL information is stored in XML. So the simpliest way to manipulate and transform WURFL is XSLT.
 
 These stylesheets are tested with xsltproc from the package libxslt (http://xmlsoft.org/XSLT). I only use this on the command line, if you need a GUI - there are lot of tools that helps you working with XSLT. Some exslt extensions are used, so please check if your XSLT processor supports this.
 
 If you have never worked with a XSLT processor or the command line before, add to WURFL and open the file with Firefox.
-
 
 ## check_wurfl.xsl
 Check your patched/modified WURFL consistency:
@@ -18,8 +16,7 @@ Check your patched/modified WURFL consistency:
 * fall_back is available and could be resolved
 
     xsltproc check_wurfl.xsl wurfl.xml
-	
-	
+
 ## convert\_2\_html.xsl
 Create a simple WURFL.xml HTML page
 
@@ -92,3 +89,9 @@ Resolve WURFL fallbacks for all values and capabilities defined in roll_out_capa
 
 ## tidy_config
 Useful tidy (http://tidy.sourceforge.net/tidy) configuration.
+
+## To combine multiple xslt transformations use the pipe syntax:
+
+    xsltproc --stringparam file "web_browsers_patch.xml" patch_wurfl.xsl wurfl.xml | \
+         xsltproc --stringparam file "remove_elements.xml" remove_elements.xsl \
+         - > wurfl_patched.xml
