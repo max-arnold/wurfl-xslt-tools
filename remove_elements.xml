@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+  <!--
+    configuration file for remove_elements.xsl,
+    send comments, questions to roland guelle <roldriguez@users.sourceforge.net>
+  -->
+  <groups>
+    <group>wta</group>
+    <group>object_download</group>
+    <group>streaming</group>
+    <group>wap_push</group>
+    <group>j2me</group>
+    <group>mms</group>
+    <group>sms</group>
+    <group>sound_format</group>
+  </groups>
+
+  <capabilities>
+    <capability>tiff</capability>
+    <capability>bmp</capability>
+  </capabilities>
+</elements>
